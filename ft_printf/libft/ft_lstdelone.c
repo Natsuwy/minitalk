@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 17:06:59 by michen            #+#    #+#             */
-/*   Updated: 2024/07/22 22:58:01 by michen           ###   ########.fr       */
+/*   Created: 2023/12/01 14:47:27 by michen            #+#    #+#             */
+/*   Updated: 2023/12/04 16:48:34 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "libft.h"
 
-# include <signal.h>
-# include <stdio.h>
-# include <unistd.h>
-
-void	ft_putstr(char *s);
-int		ft_atoi(const char *nptr);
-
-#endif
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (!lst || !del)
+		return ;
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
+}

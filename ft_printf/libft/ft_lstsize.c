@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 17:06:59 by michen            #+#    #+#             */
-/*   Updated: 2024/07/22 22:58:01 by michen           ###   ########.fr       */
+/*   Created: 2023/11/29 17:56:58 by michen            #+#    #+#             */
+/*   Updated: 2023/11/29 18:43:16 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "libft.h"
 
-# include <signal.h>
-# include <stdio.h>
-# include <unistd.h>
+int	ft_lstsize(t_list *lst)
+{
+	int	i;
 
-void	ft_putstr(char *s);
-int		ft_atoi(const char *nptr);
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
+}
+// int	main(void)
+//{
+//	t_list *node;
+//	char *str;
 
-#endif
+//	str = "123";
+//	node = ft_lstnew(str);
+//	str = "abc";
+//	node->next = ft_lstnew(str);
+//	// node = node->next;
+//	// printf("%s", (char *)node->content);
+//	printf("%d", ft_lstsize(node));
+//}

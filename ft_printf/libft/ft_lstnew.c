@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 17:06:59 by michen            #+#    #+#             */
-/*   Updated: 2024/07/22 22:58:01 by michen           ###   ########.fr       */
+/*   Created: 2023/11/28 18:54:51 by michen            #+#    #+#             */
+/*   Updated: 2023/12/01 21:10:36 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "libft.h"
 
-# include <signal.h>
-# include <stdio.h>
-# include <unistd.h>
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new;
 
-void	ft_putstr(char *s);
-int		ft_atoi(const char *nptr);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}
+// int	main(void)
+//{
+//	t_list *node;
+//	char *str;
 
-#endif
+//	str = "123";
+//	node = ft_lstnew(str);
+//	str = "abc";
+//	node->next = ft_lstnew(str);
+//	node = node->next;
+//	printf("%s", (char *)node->content);
+//}

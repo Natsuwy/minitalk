@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 17:06:59 by michen            #+#    #+#             */
-/*   Updated: 2024/07/22 22:58:01 by michen           ###   ########.fr       */
+/*   Created: 2023/12/06 19:32:28 by michen            #+#    #+#             */
+/*   Updated: 2024/01/04 20:30:45 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-# include <signal.h>
-# include <stdio.h>
-# include <unistd.h>
+# include "libft/libft.h"
+# include <stdarg.h>
 
-void	ft_putstr(char *s);
-int		ft_atoi(const char *nptr);
+int	ft_id(char c, va_list arg);
+int	ft_lohex(unsigned int n);
+int	ft_uphex(unsigned int n);
+int	ft_ptrhex(unsigned long decinbr);
+int	ft_printf(const char *str, ...);
 
 #endif

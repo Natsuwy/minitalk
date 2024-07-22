@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 17:06:59 by michen            #+#    #+#             */
-/*   Updated: 2024/07/22 22:58:01 by michen           ###   ########.fr       */
+/*   Created: 2023/11/07 20:55:52 by michen            #+#    #+#             */
+/*   Updated: 2023/11/13 19:51:26 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "libft.h"
 
-# include <signal.h>
-# include <stdio.h>
-# include <unistd.h>
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned int	i;
+	char			*str;
 
-void	ft_putstr(char *s);
-int		ft_atoi(const char *nptr);
+	i = 0;
+	str = s;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
+}
+/*
+int	main(void) {
+	char str[20] = "Hello, World!";
 
-#endif
+	printf("Before bzero: %s\n", str);
+
+	ft_bzero(str, 7);
+
+	printf("After bzero: %s\n", str);
+
+	return (0);
+}*/

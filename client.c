@@ -10,7 +10,7 @@ int	main(int ac, char **av)
 		if (pid == -1)
 			return (0);
 		str = av[2];
-		if (kill() == pid)
+		if (pid != -1)
 			printf("OK\n");
 	}
 }

@@ -1,0 +1,10 @@
+{
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/home/michen/Documents/42/minitalk",
+			"binaryPath": "/home/michen/Documents/42/minitalk/server",
+			"binaryArgs": []
+		}
+	],
+	"makefile.buildLog": ""
+}
