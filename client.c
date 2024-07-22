@@ -2,15 +2,12 @@
 
 int	main(int ac, char **av)
 {
-	int pid;
+	long pid;
 	char *str;
 	if (ac == 3)
 	{
 		pid = ft_atoi(av[1]);
-		if (pid == -1)
-			return (0);
-		str = av[2];
-		if (pid != -1)
-			printf("OK\n");
+		if (pid >= 4194305 || pid <= 0 || kill(pid, 0))
+			return (write(2, "Error\n", 6), 1);
 	}
 }

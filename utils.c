@@ -6,7 +6,7 @@
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 21:15:49 by michen            #+#    #+#             */
-/*   Updated: 2024/07/17 21:15:58 by michen           ###   ########.fr       */
+/*   Updated: 2024/07/22 23:36:48 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_putstr(char *s)
 	}
 }
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
 	char	*str;
-	int		i;
+	long	i;
 	int		minus;
-	int		res;
+	long	res;
 
 	str = (char *)nptr;
 	i = 0;
