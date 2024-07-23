@@ -4,7 +4,7 @@ FLAGS = -Wall -Werror -Wextra
 
 INCLUDE = -I . -I libft
 
-NAME = libftprintf.a
+NAME = libft.a
 
 SOURCES = ft_hex.c \
 	ft_ptrhex.c id.c printftest.c
@@ -13,7 +13,7 @@ OBJ = $(SOURCES:.c=.o)
 
 $(NAME) : $(OBJ)
 	make bonus -C libft/
-	cp libft/libft.a libftprintf.a
+	cp libft/libft.a libft.a
 	ar -rcs $(NAME) ${OBJ}
 
 %.o : %.c
