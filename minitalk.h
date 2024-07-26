@@ -6,7 +6,7 @@
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:06:59 by michen            #+#    #+#             */
-/*   Updated: 2024/07/23 01:18:16 by michen           ###   ########.fr       */
+/*   Updated: 2024/07/26 22:14:02 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 
 void	ft_putstr(char *s);
 long	ft_atol(const char *nptr);
+void	sig_handler(int signal);
 
 #endif
