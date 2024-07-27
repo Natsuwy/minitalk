@@ -23,7 +23,7 @@ $(LIB)	:
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(INCLUDES) $(LIB_INCLUDE)
 
-$(CLIENT): client.o utils.o
+$(CLIENT): client.o utils.o 
 	$(CC) $^ -o $@ $(INCLUDES) $(LIB_INCLUDE)
 
 $(SERVER): server.o utils.o

@@ -6,7 +6,7 @@
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 21:58:09 by michen            #+#    #+#             */
-/*   Updated: 2024/07/26 23:49:50 by michen           ###   ########.fr       */
+/*   Updated: 2024/07/27 19:07:04 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_build_string(char c, siginfo_t *info)
 		str = NULL;
 	}
 	else
-		str = ft_strjoin(str, &c);
+		str = ft_strjoin_bis(str, c);
 }
 
 void	bin_char(int signum, siginfo_t *info, void *context)
@@ -61,5 +61,6 @@ int	main(void)
 	ft_printf("%d\n", getpid());
 	while (1)
 		pause();
+	write(1, "\n", 1);
 	return (0);
 }

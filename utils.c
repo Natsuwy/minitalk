@@ -6,44 +6,42 @@
 /*   By: michen <michen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 21:15:49 by michen            #+#    #+#             */
-/*   Updated: 2024/07/22 23:36:48 by michen           ###   ########.fr       */
+/*   Updated: 2024/07/27 17:53:52 by michen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	ft_putstr(char *s)
-{
-	while (s != NULL)
-	{
-		write(1, &s, 1);
-		s++;
-	}
-}
-
-long	ft_atol(const char *nptr)
+char	*ft_string(char const c)
 {
 	char	*str;
-	long	i;
-	int		minus;
-	long	res;
 
-	str = (char *)nptr;
+	str = malloc(2);
+	str[0] = c;
+	str[1] = 0;
+	return (str);
+}
+
+char	*ft_strjoin_bis(char *s1, char const s2)
+{
+	int		len;
+	int		i;
+	char	*str;
+
+	if (s1 == NULL)
+		return (ft_string(s2));
+	len = ft_strlen(s1) + 1;
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
 	i = 0;
-	minus = 1;
-	res = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (s1[i] != '\0')
 	{
-		if (str[i] == '-')
-			minus *= -1;
+		str[i] = s1[i];
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-	}
-	return (minus * res);
+	str[i++] = s2;
+	str[i] = '\0';
+	free(s1);
+	return (str);
 }
